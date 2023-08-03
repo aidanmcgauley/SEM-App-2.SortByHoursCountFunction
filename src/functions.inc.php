@@ -13,3 +13,4 @@ function getSortedAttendance($items, $attendances)
 
     return $item_attendances;
 }
+?>
