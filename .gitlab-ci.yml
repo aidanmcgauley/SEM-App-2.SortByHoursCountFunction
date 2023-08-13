@@ -8,6 +8,6 @@ test:
   script:
     - apt-get update -yqq
     - apt-get install -yqq git unzip
-    - curl -sS https://getcomposer.org/installer | php
-    - php composer .phar install
+    - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    - composer install
     - ./vendor/bin/phpunit FunctionsTest.php
