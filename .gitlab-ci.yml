@@ -9,5 +9,5 @@ test:
     - apt-get update -yqq
     - apt-get install -yqq git unzip
     - curl -sS https://getcomposer.org/installer | php
-    - php composer install
+    - php composer .phar install
     - ./vendor/bin/phpunit FunctionsTest.php
