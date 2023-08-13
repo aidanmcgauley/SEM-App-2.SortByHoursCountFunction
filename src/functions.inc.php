@@ -79,12 +79,6 @@ function parameterChecker($items, $attendances, $total_hours)
     }
   }
 
-  $sorted_attendance=getSortedAttendance($items, $attendances);
-
-  $output['items']=$items;
-  $output['attendance']=$attendances;
-  $output['sorted_attendance']=$sorted_attendance;
-
   return $output;
 
 }
