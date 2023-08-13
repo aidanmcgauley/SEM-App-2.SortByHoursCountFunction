@@ -53,14 +53,6 @@ function parameterChecker($items, $attendances, $total_hours)
       return $output;
       exit();
     }
-    
-    // Check if attendance is within acceptable range
-    if($attendance > $total_assigned_hours) {
-      $output['error'] = true;
-      $output['message'] = "Attendance hours cannot exceed total assigned hours.";
-      return $output;
-      exit();
-    }
 
     // Check if attendance is non-negative
     if ($attendance < 0) {
@@ -74,6 +66,14 @@ function parameterChecker($items, $attendances, $total_hours)
     if ($total_assigned_hours < 0) {
       $output['error'] = true;
       $output['message'] = "Total hours cannot be negative.";
+      return $output;
+      exit();
+    }
+
+    // Check if attendance is within acceptable range
+    if($attendance > $total_assigned_hours) {
+      $output['error'] = true;
+      $output['message'] = "Attendance hours cannot exceed total assigned hours.";
       return $output;
       exit();
     }
