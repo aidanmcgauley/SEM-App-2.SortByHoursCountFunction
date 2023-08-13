@@ -1,0 +1,13 @@
+image: php:7.2-apache
+
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - apt-get update -yqq
+    - apt-get install -yqq git unzip
+    - curl -sS https://getcomposer.org/installer | php
+    - php composer install
+    - ./vendor/bin/phpunit FunctionsTest.php
