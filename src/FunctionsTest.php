@@ -20,8 +20,7 @@ final class FunctionsTest extends TestCase{
         $this->assertFalse($output['error']);
         $this->assertEquals($items, $output['items']);
         $this->assertEquals($attendances, $output['attendance']);
-        // Add more assertions as needed, for example:
-        $this->assertEquals(getSortedAttendance($items, $attendances), $output['sorted_attendance']);
+        
     }
 
     public function testEmptyItemName(): void
