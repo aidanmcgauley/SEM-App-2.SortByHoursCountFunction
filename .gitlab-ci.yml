@@ -10,4 +10,4 @@ test:
     - apt-get install -yqq git unzip
     - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
     - composer install
-    - ./vendor/bin/phpunit FunctionsTest.php
+    - vendor/bin/phpunit --bootstrap vendor/autoload.php src/FunctionsTest.php
