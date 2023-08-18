@@ -1,13 +1,21 @@
 image: php:7.4-apache
 
 stages:
-  - test
+  - build
+  - FunctionsTest
 
-test:
-  stage: test
+build:
+  stage: build
   script:
     - apt-get update -yqq
     - apt-get install -yqq git unzip
     - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
     - composer install
+  artifacts:
+    paths:
+      - vendor/
+
+FunctionsTest:
+  stage: FunctionsTest
+  script:
     - vendor/bin/phpunit --bootstrap vendor/autoload.php src/FunctionsTest.php
